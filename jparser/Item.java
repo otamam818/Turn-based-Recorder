@@ -1,5 +1,6 @@
 package jparser;
 
+/* Parses Items and sorts them by name */
 public class Item {
     // The name of the item
     private String Name;
@@ -13,8 +14,8 @@ public class Item {
     private int timesBought;
 
     public Item (String Name, String Description, float minCostRange, float maxCostRange) {
-        this.Name = Name;
-        this.Description = Description;
+        this.Name         = Name;
+        this.Description  = Description;
         this.minCostRange = minCostRange;
         this.maxCostRange = maxCostRange;
     }

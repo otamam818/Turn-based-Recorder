@@ -15,7 +15,7 @@ public class Item {
     // The number of times this item is bought
     private int timesBought;
 
-    public Item (String Name, String Description, float minCostRange, 
+    public Item (String ID, String Name, String Description, float minCostRange, 
             float maxCostRange) {
         this.ID           = ID;
         this.Name         = Name;
@@ -30,8 +30,9 @@ public class Item {
 
     public String toString() {
         // Initialize variables
+        String result = "";
         int i;
-        final String SEPARATOR = " \\| ", result = "";
+        final String SEPARATOR = " \\| ";
         String[] items = {
             this.ID,
             this.Name,
@@ -42,10 +43,10 @@ public class Item {
 
         // Append every item to the result while separating them
         for (i = 0; i < items.length - 1; i++) {
-            result.concat(items[i]);
-            result.concat(SEPARATOR);
+            result = result.concat(items[i]);
+            result = result.concat(SEPARATOR);
         }
-        result.concat(items[i]);
+        result = result.concat(items[i]);
         return result;
     }
 }

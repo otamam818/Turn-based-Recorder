@@ -36,13 +36,13 @@ public class Item {
         //      - maxCostRange
         //   separated by ' \| '
         final String SEPARATOR = " \\| ";
-        String[] items = [
+        String[] items = {
             this.ID,
             this.Name,
             this.Description,
-            this.minCostRange,
-            this.maxCostRange
-        ];
+            Float.toString(this.minCostRange),
+            Float.toString(this.maxCostRange),
+        };
         String result = "";
         return result;
     }

@@ -15,7 +15,8 @@ public class Item {
     // The number of times this item is bought
     private int timesBought;
 
-    public Item (String Name, String Description, float minCostRange, float maxCostRange) {
+    public Item (String Name, String Description, float minCostRange, 
+            float maxCostRange) {
         this.ID           = ID;
         this.Name         = Name;
         this.Description  = Description;

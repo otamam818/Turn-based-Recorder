@@ -28,14 +28,9 @@ public class Item {
     }
 
     public String toString() {
-        // Format:
-        //      - ID
-        //      - Name
-        //      - Description
-        //      - minCostRange
-        //      - maxCostRange
-        //   separated by ' \| '
-        final String SEPARATOR = " \\| ";
+        // Initialize variables
+        int i;
+        final String SEPARATOR = " \\| ", result = "";
         String[] items = {
             this.ID,
             this.Name,
@@ -43,7 +38,13 @@ public class Item {
             Float.toString(this.minCostRange),
             Float.toString(this.maxCostRange),
         };
-        String result = "";
+
+        // Append every item to the result while separating them
+        for (i = 0; i < items.length - 1; i++) {
+            result.concat(items[i]);
+            result.concat(SEPARATOR);
+        }
+        result.concat(items[i]);
         return result;
     }
 }

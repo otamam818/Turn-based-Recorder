@@ -43,10 +43,10 @@ public class Item {
 
         // Append every item to the result while separating them
         for (i = 0; i < items.length - 1; i++) {
-            result = result.concat(items[i]);
-            result = result.concat(SEPARATOR);
+            result += items[i];
+            result += SEPARATOR;
         }
-        result = result.concat(items[i]);
+        result += items[i];
         return result;
     }
 }

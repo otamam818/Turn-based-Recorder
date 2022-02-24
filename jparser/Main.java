@@ -1,23 +1,63 @@
 package jparser;
 import java.util.ArrayList;
 import java.io.File;
+import java.util.Scanner;
 
 public class Main {
     public final ArrayList <Item> allItems = new ArrayList <>();
-    public final File DIR_ITEMS = new File("data/items");
+    public static final File DIR_ITEMS = new File("data/items");
 
     public static void main(String args[]) {
-        Item test = new Item("01", "Bananas", "Edible", 12f, 16f);
         System.out.println("Hello world");
-        System.out.println(test.toString());
+        getItems();
     }
 
-    ArrayList <Item> loadItems(String DIR_ITEMS) {
-        ArrayList <Item> finList = new ArrayList <Item>();
-        // check if there are any items
-        // If there are, return the item
-        // if not, return '-1'
-        return finList;
+    private static String[] getItems() {
+        for (File currentFile : DIR_ITEMS.listFiles()) {
+            String fileName = currentFile.getName();
+            boolean isItemFile = !fileName.equals("README.md");
+            if (isItemFile) {
+                addItem();
+            }
+        }
+        return new String[3];
+    }
+    private void addItem(String fileName) {
+        new Thread() {
+            public void run() {
+                // Variables for the Item class
+                String ID = fileName, name, description;
+                float minCostRange, maxCostRange;
+
+                /* open the file and read each line 
+                 * as described in the README
+                */
+                int lineNumber = 1;
+                try {
+                    File file = new File(fileName);
+                    Scanner fileReader = new Scanner(file);
+                    while (fileReader.hasNextLine()) {
+                        String itemData = fileReader.nextLine();
+
+                        if (lineNumber == 1) {
+                            // Item name
+                        }
+                        else if (lineNumber == 2) {
+                            // Description
+                        }
+                        else if (lineNumber == 3) {
+                            // Price
+                        }
+                        else if (lineNumber == 4) {
+                            // Times bought
+                        }
+                    }
+                }
+
+                catch (FileNotFoundException e) {
+                }
+            }
+        }
     }
 }
 

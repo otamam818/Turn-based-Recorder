@@ -26,7 +26,7 @@ public class Main {
     private static void addItem(String fileName) {
         new Thread() {
             public void run() {
-                // Variables for the Item class
+                // Variables declared and initialized for the Item class
                 String ID = fileName, 
                        itemName = null, 
                        description = null;

@@ -5,25 +5,25 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 public class Main {
-    public static final ArrayList <Item> allItems = new ArrayList <>();
     public static final File DIR_ITEMS = new File("data/items");
 
     public static void main(String args[]) {
+        ArrayList <Item> allItems = new ArrayList <>();
         System.out.println("Hello world");
-        getItems();
+        getItems(allItems);
     }
 
-    private static void getItems() {
+    private static void getItems(ArrayList <Item> allItems) {
         for (File currentFile : DIR_ITEMS.listFiles()) {
             String fileName = currentFile.getName();
             boolean isItemFile = !fileName.equals("README.md");
             if (isItemFile) {
-                addItem(fileName);
+                addItem(fileName, allItems);
             }
         }
     }
 
-    private static void addItem(String fileName) {
+    private static void addItem(String fileName, ArrayList <Item> allItems) {
         new Thread() {
             public void run() {
                 // Variables declared and initialized for the Item class
@@ -38,6 +38,7 @@ public class Main {
                  * as described in the README
                 */
                 int lineNumber = 1;
+
                 try {
                     File file = new File(fileName);
                     Scanner fileReader = new Scanner(file);

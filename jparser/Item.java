@@ -28,6 +28,10 @@ public class Item {
         this.timesBought  = timesBought;
     }
 
+    /**
+     * Enter the filename and it will do the parsing for the item in the file
+     * @param fileName The path to the Item file
+     */
     public Item (String fileName) {
         // Variables declared and initialized for the Item class
         String ID = fileName, 
